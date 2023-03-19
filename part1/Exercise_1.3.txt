@@ -1,0 +1,37 @@
+Secret Message:
+---------------
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+
+
+Commands:
+---------
+$ docker run -d --name webserv --rm devopsdockeruh/simple-web-service:ubuntu
+
+$ docker ps
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED         STATUS         PORTS     NAMES
+c86607d75f7b   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   2 seconds ago   Up 2 seconds             webserv
+
+$ docker exec -it webserv bash
+root@c86607d75f7b:/usr/src/app# ll
+total 9868
+drwxr-xr-x 1 root root     4096 Mar 19 11:42 ./
+drwxr-xr-x 1 root root     4096 Mar 14  2021 ../
+-rwxr-xr-x 1 root root 10085718 Mar 14  2021 server*
+-rw-r--r-- 1 root root      530 Mar 19 11:42 text.log
+root@c86607d75f7b:/usr/src/app# tail -f text.log
+2023-03-19 11:42:42 +0000 UTC
+2023-03-19 11:42:44 +0000 UTC
+2023-03-19 11:42:46 +0000 UTC
+2023-03-19 11:42:48 +0000 UTC
+2023-03-19 11:42:50 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-03-19 11:42:52 +0000 UTC
+2023-03-19 11:42:54 +0000 UTC
+2023-03-19 11:42:56 +0000 UTC
+2023-03-19 11:42:58 +0000 UTC
+2023-03-19 11:43:00 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-03-19 11:43:02 +0000 UTC
+^C
+root@c86607d75f7b:/usr/src/app# exit
+exit
