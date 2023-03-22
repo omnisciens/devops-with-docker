@@ -8,4 +8,4 @@ RUN apt-get -y install curl
 COPY read_website.sh .
 RUN chmod +x read_website.sh
 
-CMD ./read_website.sh
+ENTRYPOINT ["./read_website.sh"]
